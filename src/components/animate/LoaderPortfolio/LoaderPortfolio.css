@@ -1,0 +1,39 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+}
+
+.bar {
+  width: 10vw;
+  height: 105vh;
+  background-color: #010102;
+}
+
+.counter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  color: var(--orange);
+  font-size: 20vw;
+  font-family: var(--font-firaCode);
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .counter {
+    font-size: 10vw;
+    top: 40%;
+    left: 45%;
+  }
+}

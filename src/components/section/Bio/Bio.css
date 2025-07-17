@@ -1,0 +1,144 @@
+.bio{
+  position: relative;
+  overflow: hidden;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+/* Effet Liquid Glass */
+.bio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: liquidGlass 8s infinite;
+    z-index: 1;
+}
+
+.bio::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(249, 117, 22, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(249, 117, 22, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(249, 117, 22, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes liquidGlass {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.title-bio {
+  margin-bottom: 2vh;
+  position: relative;
+  z-index: 2;
+}
+
+.bio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bio-image {
+  max-width: 80vw !important;
+  height: auto !important;
+  width: 80vw !important;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #f97516 0%, #f97516 25%, #0d1117 25%, #0d1117 75%, #f97516 75%, #f97516 100%) 1;
+  border-radius: 8px;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(315deg, #f97516, #0d1117);
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.card img {
+  z-index: 3;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.card:hover img {
+  scale: 0.9;
+  transform: translateZ(25%)
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablette (≥ 768px) */
+@media (min-width: 768px) {
+  .title-bio {
+    margin-bottom: 4vh;
+  }
+  
+  .bio-content {
+    flex-direction: column;
+    gap: 8vw;
+    align-items: center;
+  }
+  
+  .bio-image {
+    max-width: none !important;
+    width: auto !important;
+  }
+  
+  .card {
+    border-width: 4px;
+  }
+  
+  .card::after {
+    filter: blur(20px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .bio-content {
+    flex-direction: row;
+  }
+}

@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d1117;
+  --primary: #e6edf3;
+  --secondary: #30363d;
+  --blue: #569cd6;
+  --orange: #f97516;
+  --font-bebasNeue: "Bebas Neue", Arial, Helvetica, sans-serif;
+  --font-firaCode: "Fira Code", monospace;
+  --font-inter: "Inter", Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +23,366 @@
   }
 }
 
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.4;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--primary);
+  overflow-x: hidden;
+  background-color: var(--background);
+}
+
+nav{
+  padding: 0 5%;
+}
+
+main {
+  padding: 0 10%;
+}
+
+section{
+  padding: 4vh 0;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+button {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.title-p {
+  font-family: var(--font-firaCode);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.heading {
+  font-family: var(--font-firaCode);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.subheading {
+  font-family: var(--font-firaCode);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-link {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.signature-nav {
+  font-family: var(--font-bebasNeue);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2%;
+}
+
+.signature {
+  font-family: var(--font-bebasNeue);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav {
+  width: 100vw;
+  position: fixed;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.8s ease-out;
+}
+
+.navbar-visible {
+  transform: translateY(0);
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease;
+  border-left: 1px solid var(--secondary);
+}
+
+nav ul.active {
+  right: 0;
+}
+
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav ul li a {
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+/* Animation au hover */
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Amélioration de la lisibilité sur mobile */
+body {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Optimisation des images sur mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilitaires responsives */
+.hidden-mobile {
+  display: block;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+.background {
+  opacity: 0.5;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    /* Motif de fibres de carbone */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    /* Couches de fibres plus épaisses */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(255, 255, 255, 0.01) 8px,
+      rgba(255, 255, 255, 0.01) 16px
+    ),
+    /* Background de base */
+    linear-gradient(
+      90deg,
+      #0D1117 0%,
+      #0D1117 25%,
+      #0D1117 50%,
+      #0D1117 75%,
+      #0D1117 100%
+    );
+  background-size: 
+    4px 4px,    /* Fibres fines horizontales */
+    4px 4px,    /* Fibres fines verticales */
+    16px 16px,  /* Fibres épaisses diagonales */
+    200% 200%;  /* Background de base */
+  animation: smoothGradient 120s ease-in-out infinite;
+}
+
+@keyframes smoothGradient {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Tablette (≥ 768px) */
+@media (min-width: 768px) {
+  nav{
+    padding: 0 10%;
+  }
+
+  main {
+    padding: 0 20%;
+  }
+  
+  section{
+    padding: 8vh 0;
+  }
+  
+  .small-text {
+    font-size: 14px;
+  }
+  
+  .title-p {
+    font-size: 18px;
+  }
+  
+  .heading {
+    font-size: 28px;
+  }
+  
+  .subheading {
+    font-size: 20px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+  }
+  
+  .signature-nav {
+    font-size: 24px;
+  }
+  
+  .signature {
+    font-size: 48px;
+  }
+  
+  a {
+    font-size: 20px;
+  }
+  
+  nav {
+    width: 100%;
+    padding-top: 1%;
+  }
+  
+  nav ul {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border-left: none;
+    gap: 2em;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+
+}
+
+/* Très grand écran (≥ 1440px) */
+@media (min-width: 1440px) {
+  .signature {
+    white-space: nowrap;
+  }
+  
+  .signature br {
+    display: none;
+  }
+}
+
+/* Très petit mobile (≤ 480px) */
+@media (max-width: 480px) {
+  nav{
+    padding: 2%;
+  }
+
+  main {
+    padding: 0 4%;
+  }
+  
+  .signature {
+    font-size: 28px;
+  }
+  
+  .signature-nav {
+    font-size: 16px;
+  }
+
 }

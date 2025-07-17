@@ -1,0 +1,105 @@
+.color-orange{
+    color: var(--orange);
+}
+
+.technical-content {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.technicalToolBox{
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+/* Effet Liquid Glass */
+.technicalToolBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: liquidGlass 8s infinite;
+    z-index: 1;
+}
+
+.technicalToolBox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(249, 117, 22, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(249, 117, 22, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(249, 117, 22, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes liquidGlass {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Alternative: si on veut cibler chaque élément séparément */
+.technical-content p span {
+    display: inline-block;
+    transition: transform 0.1s ease;
+    transform-origin: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.technical-content p span:hover {
+    transform: scale(1.025);
+    color: var(--orange);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablette (≥ 768px) */
+@media (min-width: 768px) {
+    .technical-content {
+        gap: 0.5rem;
+    }
+    
+    .technicalToolBox{
+        margin-top: 12vh;
+        gap: 1rem;
+        text-align: right;
+    }
+    
+    .technical-content p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .technical-content p span {
+        margin: 0 2px;
+    }
+}

@@ -1,0 +1,167 @@
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-projects {
+  text-align: center;
+  padding-bottom: 4vh;
+}
+
+.project-content-head {
+  gap: 2vh;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 12%;
+  gap: 2vh;
+  position: relative;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2vh;
+}
+
+.project-info h3{
+  color: var(--orange);
+}
+
+.project-date {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-firaCode);
+  font-size: 16px;
+  color: var(--orange);
+  font-weight: 500;
+  border: 1px solid var(--orange);
+  box-shadow: 0 4px 8px rgba(249, 117, 22, 0.3);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+svg.squiggle {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+
+
+.project-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--orange);
+  color: var(--background);
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: var(--font-firaCode);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid var(--orange);
+}
+
+.project-link:hover {
+  background-color: transparent;
+  color: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(249, 117, 22, 0.3);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Mobile (≤ 767px) */
+@media (max-width: 1800px) {
+  .projects {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .title-projects {
+    padding-bottom: 2vh;
+  }
+  
+  .project-content {
+    margin: 5%;
+    gap: 1vh;
+    padding: 1vh;
+    border-radius: 10px;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(249, 117, 22, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(249, 117, 22, 0.02) 0%, transparent 25%),
+        radial-gradient(circle at 40% 80%, rgba(249, 117, 22, 0.04) 0%, transparent 25%);
+  }
+  
+  .project-info {
+    gap: 1vh;
+  }
+  
+  .project-date {
+    position: relative;
+    top: auto;
+    transform: none;
+    font-size: 14px;
+    margin-top: 2vh;
+  }
+  
+  .project-date.left,
+  .project-date.right {
+    left: auto;
+    right: auto;
+  }
+  
+  .project-content.left,
+  .project-content:not(.left) {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .project-link {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .project-content {
+    margin-top: 15%;
+  }
+  .project-date.left {
+    left: -10%;
+  }
+  
+  .project-date.right {
+    right: -10%;
+  }
+  
+  .project-content.left {
+      margin-left: 20%;
+      padding-right: 30%;
+  }
+  
+  .project-content:not(.left) {
+      padding-left: 30%;
+      margin-right: 20%;
+  }
+  svg.squiggle{
+    display: block;
+  }
+}
