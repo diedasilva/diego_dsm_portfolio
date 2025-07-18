@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import "./Hero.css";
 import SplitText from "@/components/animate/SplitText/SplitText";

@@ -1,16 +1,22 @@
 [
   {
     "id": 1,
-    "logo": "/img/logos/frimity.svg",
+    "logo": "/img/companies/logo_frimity.svg",
     "title": "Frimity",
-    "description": "Application mobile dédiée à la découverte et à l'organisation d'activités de loisirs, simplifiant la planification de sorties et enrichissant l’expérience utilisateur.",
+    "description": "Mobile app dedicated to discovering and organizing leisure activities, streamlining event planning and enriching the user experience.",
     "stack": "React Native, Express.js, MongoDB, Docker, Git",
-    "date": "Décembre 2024 – Présent",
-    "contexte": "En tant que développeur full-stack mobile sur Frimity, j’ai pris la responsabilité de concevoir et déployer de A à Z de nouvelles fonctionnalités : module de géolocalisation des événements, système d’inscription et de billetterie, fil d’actualités personnalisé, et tableau de bord analytique pour les organisateurs. J’ai structuré l’architecture API REST avec Express.js, défini les schémas de données MongoDB pour garantir la cohérence multi-plateforme et mis en place un pipeline CI/CD Docker pour automatiser les builds et les tests sur GitLab CI.",
-    "difficultes": "– Optimiser les performances de rendu des listes et cartes sur React Native tout en maintenant un chargement fluide des images et des données géospatiales.\n– Mettre en place une stratégie de cache local et de synchronisation hors-ligne pour permettre la consultation des événements sans connexion, avec résolution automatique des conflits lors de la reconnexion.\n– Gérer les certificats et déploiements différenciés sur App Store & Play Store, en assurant un versioning strict et un rollback rapide en cas de bug critique.\n– Coordonner les releases avec l’équipe UI/UX et les tests automatisés (Jest, Detox) pour réduire les retours imprévus en production.",
+    "date": "2024 – Present",
+    "context": "As the mobile full-stack lead at Frimity, I’ve owned the end-to-end rollout of new features to connect users with local events. I designed and implemented an event geolocation module, built a ticketing and registration system, developed a personalized activity feed, and created an organizer dashboard with real-time analytics. I structured our REST API in Express.js, modeled cross-platform data schemas in MongoDB, and automated our Docker-based CI/CD pipeline in GitLab for builds, tests, and deployments.",
+    "challenges": [
+      "Achieving smooth, high-performance rendering of long lists and interactive maps in React Native while loading geospatial data and images on the fly.",
+      "Implementing a robust offline-first strategy with local caching and conflict-resolution sync to allow users to browse and register for events without a network.",
+      "Managing separate App Store and Play Store certificate workflows, enforcing strict semantic versioning, and enabling rapid rollback on critical bug fixes.",
+      "Coordinating feature releases with our UI/UX team and integrating Jest & Detox end-to-end tests to catch regressions before they reach production."
+    ],
     "stackIcons": [
       "/img/svg/icons/logo_react.svg",
       "/img/svg/icons/logo_express.svg",
+      "/img/svg/icons/logo_nodejs.svg",
       "/img/svg/icons/logo_mongodb.svg",
       "/img/svg/icons/logo_docker.svg",
       "/img/svg/icons/logo_git.svg"
@@ -18,13 +24,19 @@
   },
   {
     "id": 2,
-    "logo": "/img/logos/trainbuddy.svg",
+    "logo": "/",
     "title": "TrainBuddy",
-    "description": "Plateforme web et mobile pour accompagner les pratiquants de musculation avec un suivi personnalisé et une gestion intuitive des séances.",
+    "description": "Web and mobile platform supporting strength-training athletes with personalized workout tracking and intuitive session management.",
     "stack": "Next.js, Java, Spring Boot, PostgreSQL, Git",
-    "date": "Octobre 2024 – Présent",
-    "contexte": "Initié comme projet personnel puis adopté en interne, j’ai architecturé TrainBuddy en microservices : back-end Spring Boot exposant des endpoints GraphQL, front-end Next.js avec SSR et SSG pour le SEO, et base PostgreSQL hébergée sur AWS RDS. J’ai défini les workflows d’inscription, la gestion des programmes d’entraînement dynamiques, les notifications par e-mail et push, et un tableau de bord statistique calculant progression, charges et courbes de performance.",
-    "difficultes": "– Concevoir un système de calcul des statistiques en temps réel sans surcharger la base de données (partitionnement, indexation, jobs batch périodiques).\n– Assurer la cohérence des données utilisateurs entre web et mobile (authentification JWT, rafraîchissement de token, stratégies SSR/CSR).\n– Implémenter un déploiement blue-green sur AWS Elastic Beanstalk pour garantir zéro temps d’arrêt lors des mises à jour.\n– Équilibrer la granularité des logs et alertes (Prometheus + Grafana) pour détecter rapidement les anomalies de performances sans générer de bruit.",
+    "date": "2024 – Present",
+    "context": "Driven by my passion for both sports and software development, I conceived TrainBuddy as a way to sharpen my technical skills while creating a tool to motivate strength athletes to train consistently. I envisioned a platform combining a clean, engaging UX with powerful performance tracking, leveraging the full spectrum of Next.js from static site generation and server-side rendering to seamless client-side hydration. Working solo, I managed everything from initial UX ideation through to production deployment, ensuring each feature encouraged regular engagement and smooth progression.",
+    "challenges": [
+      "Mastering Next.js end-to-end: implementing Server-Side Rendering (SSR), Static Site Generation (SSG), and client-side transitions, while optimizing load times and SEO performance.",
+      "Owning the project entirely as a solo developer: defining the roadmap, handling both back-end (Java/Spring Boot) and front-end (Next.js) development, and maintaining the production environment.",
+      "Designing a compelling UI/UX with limited design background: choosing components, establishing clear visual hierarchy, and crafting intuitive user flows to ensure rapid onboarding.",
+      "Ensuring user retention through an intuitive experience: integrating relevant notifications, real-time performance feedback, and light gamification to keep users coming back.",
+      "Optimizing data architecture for scalability: structuring PostgreSQL schemas, implementing caching strategies, and scheduling batch jobs for statistical calculations without compromising responsiveness."
+    ],
     "stackIcons": [
       "/img/svg/icons/logo_nextjs.svg",
       "/img/svg/icons/logo_java.svg",
@@ -35,36 +47,47 @@
   },
   {
     "id": 3,
-    "logo": "/img/logos/sopra_steria.svg",
+    "logo": "/img/companies/logo_sopra-steria.png",
     "title": "Sopra Steria",
-    "description": "Application interne OGeP pour la gestion des devis, factures et commandes de la CNAM, utilisée pour centraliser les workflows métiers.",
-    "stack": "AngularJS, Java, Spring Boot, SQL, VBA, Git",
-    "date": "2022 – 2024",
-    "contexte": "En alternance, j’ai rejoint l’équipe en charge de l’application OGeP, déployée chez la CNAM. J’ai participé à l’analyse des besoins métier (ateliers avec les gestionnaires), réécriture de modules legacy en Java/Spring Boot, et modernisation de l’interface AngularJS. J’ai automatisé les rapports financiers via des scripts VBA et intégré ces exports dans la plateforme pour générer des tableaux de bord Excel interactifs destinés aux décideurs.",
-    "difficultes": "– Migrer en douceur des routines VBA historiques vers des services Java, tout en garantissant l’absence de régression fonctionnelle.\n– Optimiser des requêtes SQL complexes manipulant de gros volumes de données (>10 millions de lignes), réduire les temps de traitement de plus de 70 % grâce à la réécriture de jointures et à l’ajout d’index.\n– Coordonner les déploiements en environnement multi-sites (DEV, UAT, PROD) avec des scripts Liquibase, en respectant les fenêtres de maintenance imposées par la CNAM.\n– Respecter les normes de sécurité et de confidentialité des données de santé (RGPD, hébergement certifié HDS) lors de chaque mise à jour.",
+    "description": "Internal web application for managing project proposals, orders, and billing cycles for the CNAM within Sopra Steria’s Santé Social Emploi vertical.",
+    "stack": "Java, AngularJS, SQL, VBA, Git",
+    "date": "2021 – 2022",
+    "context": "During my second-year apprenticeship at Sopra Steria Group, I joined the Santé Social Emploi (SSE) vertical’s team to enhance and maintain a critical internal tool for the CNAM. As a Solution Builder, I contributed to all phases of the project lifecycle analysis, development, testing, and deployment working within a V-model process, collaborating via Git and HP ALM, and delivering features and fixes through on-premise and cloud environments.",
+    "challenges": [
+      "Onboarding to a large-scale enterprise V-model workflow, including HP ALM test management and strict bi-monthly release cycles.",
+      "Developing new web features in AngularJS and Java backend services while adhering to detailed functional specifications and legacy data models.",
+      "Automating and optimizing SQL Server and VBA-based Excel integrations for high-volume data imports despite limited initial familiarity with VBA.",
+      "Implementing performance tuning and query optimization to resolve production scalability issues and reduce application latency.",
+      "Coordinating multi-stage deployments creating Git tags, generating WAR artifacts, and executing scripted deployments in QUALIF and PROD while ensuring data integrity and minimal downtime."
+    ],
     "stackIcons": [
       "/img/svg/icons/logo_angular.svg",
       "/img/svg/icons/logo_java.svg",
       "/img/svg/icons/logo_spring.svg",
       "/img/svg/icons/logo_mysql.svg",
-      "/img/svg/icons/logo_vba.svg",
       "/img/svg/icons/logo_git.svg"
     ]
   },
   {
     "id": 4,
-    "logo": "/img/logos/shift89.svg",
+    "logo": "/img/companies/logo_shift89.png",
     "title": "Shift89",
-    "description": "Plateforme B2B 4Innovation pour accompagner les entreprises dans leurs démarches d’innovation, avec façade marketing et espace client.",
-    "stack": "Angular, Azure Logic Apps, SQL Azure, GitHub",
+    "description": "Marketing website and client portal for 4innovation, designed to showcase services and enable client interactions.",
+    "stack": "Angular, Azure Logic Apps, SQL Azure, GitHub, VS Code",
     "date": "2021 – 2022",
-    "contexte": "Lors de mon alternance, j’ai développé le front-office marketing sous Angular, intégrant des pages dynamiques de présentation des offres et un configurateur de services. J’ai ensuite pris en charge l’espace client, construisant via Azure Logic Apps des workflows sans-serveur pour gérer les demandes de devis, notifications automatiques et synchronisation avec la base SQL Azure. J’ai collaboré avec l’équipe produit pour fixer les critères UX et les règles métier.",
-    "difficultes": "– Créer des connecteurs personnalisés Azure Logic Apps pour interfacer CRM et ERP externes, gérer la latence et la résilience des appels HTTP.\n– Mettre en place un système de rôles et permissions granulaire dans Angular, assurant que chaque profil (admin, client, prospect) ne voie que son périmètre.\n– Assurer la montée en charge de la plateforme lors de campagnes marketing (pics à plusieurs centaines de requêtes/minute) en dimensionnant correctement les App Services et règles de scaling.\n– Documenter le processus CI/CD GitHub Actions et rédiger des guides pour l’équipe QA afin d’uniformiser les tests et déploiements.",
+    "context": "During my apprenticeship at Shift89, I joined a small distributed development team to build and refine 4innovation’s web presence and client portal. I was responsible for turning Adobe XD mockups into Angular modules, configuring Azure Logic Apps for backend workflows, and managing SQL Azure databases. Working primarily remotely, we held daily stand-ups and weekly client meetings to iteratively deliver features.",
+    "challenges": [
+      "Acquiring hands-on proficiency in Angular and TypeScript to create responsive SPA modules based on designer mockups.",
+      "Owning end-to-end development as a solo alternant: environment setup, code collaboration on GitHub, and continuous learning under remote conditions.",
+      "Designing and implementing UI/UX flows without formal design training, ensuring rapid user onboarding through intuitive interfaces.",
+      "Orchestrating Azure Logic Apps and functions to realize codeless backend integrations, handling HTTP triggers and SQL actions seamlessly.",
+      "Structuring SQL Azure schemas and maintaining separate development and production databases to support safe testing and deployment."
+    ],
     "stackIcons": [
       "/img/svg/icons/logo_angular.svg",
       "/img/svg/icons/logo_azure.svg",
       "/img/svg/icons/logo_mysql.svg",
-      "/img/svg/icons/logo_github.svg"
+      "/img/svg/icons/logo_git.svg"
     ]
   }
 ]

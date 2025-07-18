@@ -15,7 +15,27 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
-    return () => lenis.destroy()
+
+    // Gestion smooth scroll pour les ancres
+    function handleAnchorClick(e: MouseEvent) {
+      const anchor = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
+      if (anchor) {
+        const hash = anchor.getAttribute('href');
+        if (hash && hash.length > 1) {
+          const target = document.querySelector(hash);
+          if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target as HTMLElement, { offset: 0, duration: 1.2 });
+          }
+        }
+      }
+    }
+    document.addEventListener('click', handleAnchorClick);
+
+    return () => {
+      lenis.destroy()
+      document.removeEventListener('click', handleAnchorClick);
+    }
   }, [])
 
   return <>{children}</>

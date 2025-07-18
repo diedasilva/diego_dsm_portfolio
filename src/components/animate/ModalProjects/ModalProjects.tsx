@@ -8,8 +8,8 @@ import { createPortal } from "react-dom";
 interface ModalProjectsProps {
   open: boolean;
   project: Project & {
-    contexte?: string;
-    difficultes?: string;
+    context?: string;
+    challenges?: string[];
     stackIcons?: string[]; // URLs or icon class names
   };
   onClose: () => void;
@@ -88,6 +88,22 @@ export default function ModalProjects({
 
   if (!open) return null;
 
+  const stackIconLabels: Record<string, string> = {
+    "logo_react.svg": "React",
+    "logo_express.svg": "Express.js",
+    "logo_nodejs.svg": "Node.js",
+    "logo_mongodb.svg": "MongoDB",
+    "logo_docker.svg": "Docker",
+    "logo_git.svg": "Git",
+    "logo_nextjs.svg": "Next.js",
+    "logo_java.svg": "Java",
+    "logo_spring.svg": "Spring Boot",
+    "logo_postgresql.svg": "PostgreSQL",
+    "logo_angular.svg": "Angular",
+    "logo_azure.svg": "Azure",
+    "logo_mysql.svg": "MySQL",
+  };
+
   return createPortal(
     <div className="modal-overlay" ref={overlayRef} onClick={handleClose}>
       <div
@@ -117,34 +133,44 @@ export default function ModalProjects({
           <div className="modal-title subheading">Description : </div>
           {project.description}
         </div>
-        {project.contexte && (
+        {project.context && (
           <div className="modal-context">
-            <div className="modal-title subheading">Contexte : </div>
-            {project.contexte}
+            <div className="modal-title subheading">Context : </div>
+            {project.context}
           </div>
         )}
-        {project.difficultes && (
-          <div className="modal-difficultes">
+        {project.challenges && project.challenges.length > 0 && (
+          <div className="modal-challenges">
             <div className="modal-title subheading">
-              Difficultés rencontrées :
+              Challenges :
             </div>
-            {project.difficultes}
+            <ul>
+              {project.challenges.map((challenge, idx) => (
+                <li key={idx}>{challenge}</li>
+              ))}
+            </ul>
           </div>
         )}
         <div className="modal-stack">
           <div className="modal-stack-icons">
             <div className="modal-title subheading">Stacks techniques :</div>
             {project.stackIcons && project.stackIcons.length > 0 ? (
-              project.stackIcons.map((icon, i) => (
-                <Image
-                  key={i}
-                  width={48}
-                  height={48}
-                  src={icon}
-                  alt="stack icon"
-                  className="stack-icon"
-                />
-              ))
+              project.stackIcons.map((icon, i) => {
+                const iconFile = icon.split("/").pop() || "";
+                const label = stackIconLabels[iconFile] || iconFile.replace("logo_", "").replace(".svg", "");
+                return (
+                  <div key={i} className="stack-icon-wrapper">
+                    <span className="stack-icon-tooltip">{label}</span>
+                    <Image
+                      width={48}
+                      height={48}
+                      src={icon}
+                      alt={label}
+                      className="stack-icon"
+                    />
+                  </div>
+                );
+              })
             ) : (
               <span>{project.stack}</span>
             )}

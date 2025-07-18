@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "@/components/section/Hero/Hero";
 import Bio from "@/components/section/Bio/Bio";
 import Projects from "@/components/section/Projects/Projects";
@@ -19,14 +17,7 @@ export default function HomePage() {
       >
         <Bio />
       </FadeContent>
-      <FadeContent
-        blur={true}
-        duration={1000}
-        easing="ease-out"
-        initialOpacity={0}
-      >
-        <Projects />
-      </FadeContent>
+      <Projects />
       <FadeContent
         blur={true}
         duration={1000}
