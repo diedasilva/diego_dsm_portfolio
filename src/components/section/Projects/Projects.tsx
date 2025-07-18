@@ -76,11 +76,14 @@ export default function Projects() {
       }
     );
 
+    // Détection mobile
+    const isMobile = window.innerWidth < 768;
+
     // Animation d'apparition progressive des project-content
     const projectContents = gsap.utils.toArray(".project-content");
     projectContents.forEach((content, index) => {
       const isLeft = index % 2 === 0;
-      const xOffset = isLeft ? -100 : 100;
+      const xOffset = isMobile ? 0 : (isLeft ? -100 : 100);
 
       gsap.fromTo(
         content as HTMLElement,

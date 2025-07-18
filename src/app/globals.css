@@ -346,6 +346,7 @@ img {
     align-items: center;
     border-left: none;
     gap: 2em;
+    padding-top: 0;
   }
   
   .menu-toggle {

@@ -33,7 +33,5 @@
 @media (max-width: 480px) {
   .counter {
     font-size: 10vw;
-    top: 40%;
-    left: 45%;
   }
 }
