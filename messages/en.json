@@ -1,0 +1,162 @@
+{
+  "Hero": {
+    "title": ["Hello ! I'm Diego, ", "a Fullstack Developer"],
+    "typewriter": "Developing is my passion, and I love turning ideas into experiences worth sharing.",
+    "wordToReplace": "sharing.",
+    "typewriterReplacements": ["exploring.", "celebrating.", "showcasing.", "experiencing."]
+  },
+  "Bio": {
+    "heading": "Lifting, Learning, Coding: A Journey of Passion",
+    "description": [
+      "I've always been driven by a deep curiosity and a desire to explore different worlds. Sports are an essential part of my balance: whether it's on a football field, in the gym, or during an intense training session, I find discipline, resilience, and energy that motivate me every day.",
+      "Video games also play an important role in my life. Beyond entertainment, they have taught me patience, logic, and the ability to stay focused on a goal while enjoying the process of learning and improving.",
+      "Programming naturally became part of this journey. I see it as the same dynamic: taking on challenges, building step by step, finding solutions, and seeing the concrete results of my work. Every line of code feels like a piece of a bigger picture that gradually takes shape.",
+      "I chose this profession because development allows me to combine my passion for creating with my desire to make things simpler, more efficient, and more meaningful for others.",
+      "Today, I put my expertise into projects that matter, with the ambition to keep learning, growing, and sharing what I love to do."
+    ]
+  },
+  "Projects": {
+    "title": "Learning, Creating, Delivering: My Work in Action",
+    "learnMore": "Learn more",
+    "ProjectsData": [
+      {
+        "id": 1,
+        "logo": "/img/companies/logo_frimity.svg",
+        "title": "Frimity",
+        "description": "Mobile app dedicated to discovering and organizing leisure activities, streamlining event planning and enriching the user experience.",
+        "stack": "React Native, Express.js, MongoDB, Docker, Git",
+        "date": "2024 – Present",
+        "context": "As the mobile full-stack lead at Frimity, I've owned the end-to-end rollout of new features to connect users with local events. I designed and implemented an event geolocation module, built a ticketing and registration system, developed a personalized activity feed, and created an organizer dashboard with real-time analytics. I structured our REST API in Express.js, modeled cross-platform data schemas in MongoDB, and automated our Docker-based CI/CD pipeline in GitLab for builds, tests, and deployments.",
+        "challenges": [
+          "Achieving smooth, high-performance rendering of long lists and interactive maps in React Native while loading geospatial data and images on the fly.",
+          "Implementing a robust offline-first strategy with local caching and conflict-resolution sync to allow users to browse and register for events without a network.",
+          "Managing separate App Store and Play Store certificate workflows, enforcing strict semantic versioning, and enabling rapid rollback on critical bug fixes.",
+          "Coordinating feature releases with our UI/UX team and integrating Jest & Detox end-to-end tests to catch regressions before they reach production."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_react.svg",
+          "/img/svg/icons/logo_express.svg",
+          "/img/svg/icons/logo_nodejs.svg",
+          "/img/svg/icons/logo_mongodb.svg",
+          "/img/svg/icons/logo_docker.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 2,
+        "logo": "/",
+        "title": "TrainBuddy",
+        "description": "Web and mobile platform supporting strength-training athletes with personalized workout tracking and intuitive session management.",
+        "stack": "Next.js, Java, Spring Boot, PostgreSQL, Git",
+        "date": "2024 – Present",
+        "context": "Driven by my passion for both sports and software development, I conceived TrainBuddy as a way to sharpen my technical skills while creating a tool to motivate strength athletes to train consistently. I envisioned a platform combining a clean, engaging UX with powerful performance tracking, leveraging the full spectrum of Next.js from static site generation and server-side rendering to seamless client-side hydration. Working solo, I managed everything from initial UX ideation through to production deployment, ensuring each feature encouraged regular engagement and smooth progression.",
+        "challenges": [
+          "Mastering Next.js end-to-end: implementing Server-Side Rendering (SSR), Static Site Generation (SSG), and client-side transitions, while optimizing load times and SEO performance.",
+          "Owning the project entirely as a solo developer: defining the roadmap, handling both back-end (Java/Spring Boot) and front-end (Next.js) development, and maintaining the production environment.",
+          "Designing a compelling UI/UX with limited design background: choosing components, establishing clear visual hierarchy, and crafting intuitive user flows to ensure rapid onboarding.",
+          "Ensuring user retention through an intuitive experience: integrating relevant notifications, real-time performance feedback, and light gamification to keep users coming back.",
+          "Optimizing data architecture for scalability: structuring PostgreSQL schemas, implementing caching strategies, and scheduling batch jobs for statistical calculations without compromising responsiveness."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_nextjs.svg",
+          "/img/svg/icons/logo_java.svg",
+          "/img/svg/icons/logo_spring.svg",
+          "/img/svg/icons/logo_postgresql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 3,
+        "logo": "/img/companies/logo_sopra-steria.png",
+        "title": "Sopra Steria",
+        "description": "Internal web application for managing project proposals, orders, and billing cycles for the CNAM within Sopra Steria's Santé Social Emploi vertical.",
+        "stack": "Java, AngularJS, SQL, VBA, Git",
+        "date": "2021 – 2022",
+        "context": "During my second-year apprenticeship at Sopra Steria Group, I joined the Santé Social Emploi (SSE) vertical's team to enhance and maintain a critical internal tool for the CNAM. As a Solution Builder, I contributed to all phases of the project lifecycle analysis, development, testing, and deployment working within a V-model process, collaborating via Git and HP ALM, and delivering features and fixes through on-premise and cloud environments.",
+        "challenges": [
+          "Onboarding to a large-scale enterprise V-model workflow, including HP ALM test management and strict bi-monthly release cycles.",
+          "Developing new web features in AngularJS and Java backend services while adhering to detailed functional specifications and legacy data models.",
+          "Automating and optimizing SQL Server and VBA-based Excel integrations for high-volume data imports despite limited initial familiarity with VBA.",
+          "Implementing performance tuning and query optimization to resolve production scalability issues and reduce application latency.",
+          "Coordinating multi-stage deployments creating Git tags, generating WAR artifacts, and executing scripted deployments in QUALIF and PROD while ensuring data integrity and minimal downtime."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_angular.svg",
+          "/img/svg/icons/logo_java.svg",
+          "/img/svg/icons/logo_spring.svg",
+          "/img/svg/icons/logo_mysql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 4,
+        "logo": "/img/companies/logo_shift89.png",
+        "title": "Shift89",
+        "description": "Marketing website and client portal for 4innovation, designed to showcase services and enable client interactions.",
+        "stack": "Angular, Azure Logic Apps, SQL Azure, GitHub, VS Code",
+        "date": "2021 – 2022",
+        "context": "During my apprenticeship at Shift89, I joined a small distributed development team to build and refine 4innovation's web presence and client portal. I was responsible for turning Adobe XD mockups into Angular modules, configuring Azure Logic Apps for backend workflows, and managing SQL Azure databases. Working primarily remotely, we held daily stand-ups and weekly client meetings to iteratively deliver features.",
+        "challenges": [
+          "Acquiring hands-on proficiency in Angular and TypeScript to create responsive SPA modules based on designer mockups.",
+          "Owning end-to-end development as a solo alternant: environment setup, code collaboration on GitHub, and continuous learning under remote conditions.",
+          "Designing and implementing UI/UX flows without formal design training, ensuring rapid user onboarding through intuitive interfaces.",
+          "Orchestrating Azure Logic Apps and functions to realize codeless backend integrations, handling HTTP triggers and SQL actions seamlessly.",
+          "Structuring SQL Azure schemas and maintaining separate development and production databases to support safe testing and deployment."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_angular.svg",
+          "/img/svg/icons/logo_azure.svg",
+          "/img/svg/icons/logo_mysql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      }
+    ]
+  },
+  "TechnicalToolBox": {
+    "heading": "Building, Shipping, Mastering: My Technical Toolbox",
+    "technicalData": [
+      {
+        "title": "Languages",
+        "items": ["Java", "JavaScript", "TypeScript", "SQL", "VBA"]
+      },
+      {
+        "title": "Frameworks & Libraries",
+        "items": ["Spring Framework (Spring Boot)", "AngularJS", "Angular CLI", "ReactJS", "React Native", "Next.js", "Express.js"]
+      },
+      {
+        "title": "Databases",
+        "items": ["SQL Server", "PostgreSQL", "MongoDB", "SQL Azure"]
+      },
+      {
+        "title": "Tools & Environments",
+        "items": ["Jira", "Confluence", "Figma", "Suite Adobe (notions)", "Notion", "Visual Studio Code", "Windows", "Linux", "Nodejs"]
+      },
+      {
+        "title": "Methodologies & Soft Skills",
+        "items": ["Agile / Scrum (Scrum Master 1)", "Software analysis & design", "Complex problem solving", "Autonomy", "Perseverance", "Versatility"]
+      }
+    ]
+  },
+  "Contacts": {
+    "heading": "Connecting, Collaborating, Creating: Let's Build Together !",
+    "resume": "You can find my resume here !"
+  },
+  "Navigation": {
+    "home": "Home",
+    "biography": "Biography",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "message": "Thanks for stopping by ! I'm excited to hear about your ideas and explore how we can work together.",
+    "copyright": "Developed by Diego Da Silva Marques",
+    "rights": "©2025 All rights reserved"
+  },
+  "Modal": {
+    "close": "Close",
+    "description": "Description :",
+    "context": "Context :",
+    "challenges": "Challenges :",
+    "technicalStack": "Technical stacks :"
+  }
+}

@@ -1,12 +1,15 @@
 import React from "react";
 import "./Contacts.css";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Contacts() {
+  const t = useTranslations("Contacts");
+
   return (
     <section className="contacts" id="contacts">
       <div className="subheading title-contacts">
-        Connecting, Collaborating, Creating: Let’s Build Together !
+        {t("heading")}
       </div>
       <div className="contact-content">
         <Link
@@ -140,7 +143,7 @@ export default function Contacts() {
         </Link>
       </div>
       <div className="contact-footer">
-        <Link href="/Diego.DSM_DevFullStack_Java_Angular_React_6.pdf" className="title-p" target="_blank">You can find my resume here !</Link>
+        <Link href="/Diego.DSM_DevFullStack_Java_Angular_React_6.pdf" className="title-p" target="_blank">{t("resume")}</Link>
       </div>
     </section>
   );

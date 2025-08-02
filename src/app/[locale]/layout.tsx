@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Fira_Code, Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Navbar from "@/components/layout/Navbar/Navbar";
 import LenisProvider from "@/components/animate/Lenis/LenisProvider";
 import Footer from "@/components/layout/Footer/Footer";
 import FloatingIcons from "@/components/animate/FloatingIcons/FloatingIcons";
 import LoaderPortfolio from "@/components/animate/LoaderPortfolio/LoaderPortfolio";
+import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
@@ -42,23 +45,41 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  const messages = (await import(`../../../messages/${locale}.json`)).default;
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${inter.variable} ${firaCode.variable} ${bebasNeue.variable} antialiased`}
       >
-        <LoaderPortfolio />
-        <LenisProvider>
-          <FloatingIcons />
-          <Navbar />
-          {children}
-          <Footer />
-        </LenisProvider>
+        <NextIntlClientProvider
+          messages={messages}
+          locale={locale}
+        >
+          <LoaderPortfolio />
+          <LenisProvider>
+            <FloatingIcons />
+            <Navbar />
+            {children}
+            <Footer />
+          </LenisProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,0 +1,162 @@
+{
+  "Hero": {
+    "title": ["Bonjour ! Je suis Diego, ", "développeur Fullstack"],
+    "typewriter": "Le développement est ma passion, et j'aime transformer les idées en expériences qui valent la peine d'être partagées.",
+    "wordToReplace": "partagées.",
+    "typewriterReplacements": ["explorées.", "célébrées.", "présentées.", "vécues."]
+  },
+  "Bio": {
+    "heading": "Soulever, Apprendre, Coder : Un parcours de passion",
+    "description": [
+      "J'ai toujours été animé par une grande curiosité et une envie d'explorer différents univers. Le sport est essentiel à mon équilibre : que ce soit sur un terrain de foot, à la salle ou lors d'un entraînement intense, j'y trouve la discipline, la résilience et l'énergie qui me motivent chaque jour.",
+      "Les jeux vidéo occupent aussi une place importante. Au-delà du divertissement, ils m'ont appris la patience, la logique et la capacité à rester concentré sur un objectif tout en appréciant le processus d'apprentissage et de progression.",
+      "La programmation s'est naturellement imposée dans ce parcours. J'y retrouve la même dynamique : relever des défis, construire étape par étape, trouver des solutions et voir le résultat concret de mon travail. Chaque ligne de code est comme une pièce d'un puzzle qui prend forme.",
+      "J'ai choisi ce métier car le développement me permet de combiner ma passion pour la création avec mon envie de rendre les choses plus simples, efficaces et utiles pour les autres.",
+      "Aujourd'hui, je mets mon expertise au service de projets qui comptent, avec l'ambition de continuer à apprendre, grandir et partager ce que j'aime faire."
+    ]
+  },
+  "Projects": {
+    "title": "Apprendre, Créer, Livrer : Mon Travail en Action",
+    "learnMore": "En savoir plus",
+    "ProjectsData": [
+      {
+        "id": 1,
+        "logo": "/img/companies/logo_frimity.svg",
+        "title": "Frimity",
+        "description": "Application mobile dédiée à la découverte et à l'organisation d'activités de loisirs, simplifiant la planification d'événements et enrichissant l'expérience utilisateur.",
+        "stack": "React Native, Express.js, MongoDB, Docker, Git",
+        "date": "2024 – Présent",
+        "context": "En tant que lead full-stack mobile chez Frimity, j'ai pris en charge le déploiement end-to-end de nouvelles fonctionnalités pour connecter les utilisateurs aux événements locaux. J'ai conçu et implémenté un module de géolocalisation d'événements, construit un système de billetterie et d'inscription, développé un flux d'activités personnalisé et créé un tableau de bord organisateur avec des analyses en temps réel. J'ai structuré notre API REST en Express.js, modélisé des schémas de données cross-platform dans MongoDB et automatisé notre pipeline CI/CD basé sur Docker dans GitLab pour les builds, tests et déploiements.",
+        "challenges": [
+          "Atteindre un rendu fluide et performant de longues listes et de cartes interactives dans React Native tout en chargeant des données géospatiales et des images à la volée.",
+          "Implémenter une stratégie offline-first robuste avec mise en cache locale et synchronisation de résolution de conflits pour permettre aux utilisateurs de parcourir et s'inscrire aux événements sans réseau.",
+          "Gérer les workflows de certificats séparés App Store et Play Store, appliquer un versioning sémantique strict et permettre un rollback rapide sur les corrections de bugs critiques.",
+          "Coordonner les releases de fonctionnalités avec notre équipe UI/UX et intégrer les tests end-to-end Jest & Detox pour détecter les régressions avant qu'elles n'atteignent la production."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_react.svg",
+          "/img/svg/icons/logo_express.svg",
+          "/img/svg/icons/logo_nodejs.svg",
+          "/img/svg/icons/logo_mongodb.svg",
+          "/img/svg/icons/logo_docker.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 2,
+        "logo": "/",
+        "title": "TrainBuddy",
+        "description": "Plateforme web et mobile soutenant les athlètes de musculation avec un suivi d'entraînement personnalisé et une gestion intuitive des sessions.",
+        "stack": "Next.js, Java, Spring Boot, PostgreSQL, Git",
+        "date": "2024 – Présent",
+        "context": "Animé par ma passion pour le sport et le développement logiciel, j'ai conçu TrainBuddy comme un moyen d'affiner mes compétences techniques tout en créant un outil pour motiver les athlètes de force à s'entraîner régulièrement. J'ai imaginé une plateforme combinant une UX propre et engageante avec un suivi de performance puissant, exploitant tout le spectre de Next.js de la génération de sites statiques et du rendu côté serveur à l'hydratation côté client transparente. Travaillant seul, j'ai géré tout, de l'idéation UX initiale jusqu'au déploiement en production, m'assurant que chaque fonctionnalité encourageait l'engagement régulier et la progression fluide.",
+        "challenges": [
+          "Maîtriser Next.js de bout en bout : implémenter le Server-Side Rendering (SSR), la Static Site Generation (SSG) et les transitions côté client, tout en optimisant les temps de chargement et les performances SEO.",
+          "Posséder entièrement le projet en tant que développeur solo : définir la feuille de route, gérer le développement back-end (Java/Spring Boot) et front-end (Next.js), et maintenir l'environnement de production.",
+          "Concevoir une UI/UX convaincante avec un background design limité : choisir les composants, établir une hiérarchie visuelle claire et créer des flux utilisateur intuitifs pour assurer un onboarding rapide.",
+          "Assurer la rétention utilisateur grâce à une expérience intuitive : intégrer des notifications pertinentes, des retours de performance en temps réel et une légère gamification pour faire revenir les utilisateurs.",
+          "Optimiser l'architecture de données pour la scalabilité : structurer les schémas PostgreSQL, implémenter des stratégies de cache et programmer des jobs batch pour les calculs statistiques sans compromettre la réactivité."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_nextjs.svg",
+          "/img/svg/icons/logo_java.svg",
+          "/img/svg/icons/logo_spring.svg",
+          "/img/svg/icons/logo_postgresql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 3,
+        "logo": "/img/companies/logo_sopra-steria.png",
+        "title": "Sopra Steria",
+        "description": "Application web interne pour la gestion des propositions de projets, commandes et cycles de facturation pour la CNAM au sein du vertical Santé Social Emploi de Sopra Steria.",
+        "stack": "Java, AngularJS, SQL, VBA, Git",
+        "date": "2021 – 2022",
+        "context": "Pendant mon apprentissage de deuxième année chez Sopra Steria Group, j'ai rejoint l'équipe du vertical Santé Social Emploi (SSE) pour améliorer et maintenir un outil interne critique pour la CNAM. En tant que Solution Builder, j'ai contribué à toutes les phases du cycle de vie du projet analyse, développement, test et déploiement en travaillant dans un processus en V, collaborant via Git et HP ALM, et livrant des fonctionnalités et corrections à travers des environnements on-premise et cloud.",
+        "challenges": [
+          "Intégration à un workflow d'entreprise à grande échelle en V, incluant la gestion de tests HP ALM et des cycles de release stricts bi-mensuels.",
+          "Développement de nouvelles fonctionnalités web en AngularJS et services backend Java tout en adhérant aux spécifications fonctionnelles détaillées et modèles de données legacy.",
+          "Automatisation et optimisation des intégrations SQL Server et VBA Excel pour les imports de données à haut volume malgré une familiarité initiale limitée avec VBA.",
+          "Implémentation du tuning de performance et optimisation de requêtes pour résoudre les problèmes de scalabilité en production et réduire la latence de l'application.",
+          "Coordination des déploiements multi-étapes créant des tags Git, générant des artefacts WAR et exécutant des déploiements scriptés en QUALIF et PROD tout en assurant l'intégrité des données et un temps d'arrêt minimal."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_angular.svg",
+          "/img/svg/icons/logo_java.svg",
+          "/img/svg/icons/logo_spring.svg",
+          "/img/svg/icons/logo_mysql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      },
+      {
+        "id": 4,
+        "logo": "/img/companies/logo_shift89.png",
+        "title": "Shift89",
+        "description": "Site web marketing et portail client pour 4innovation, conçu pour présenter les services et permettre les interactions clients.",
+        "stack": "Angular, Azure Logic Apps, SQL Azure, GitHub, VS Code",
+        "date": "2021 – 2022",
+        "context": "Pendant mon apprentissage chez Shift89, j'ai rejoint une petite équipe de développement distribuée pour construire et affiner la présence web et le portail client de 4innovation. J'étais responsable de transformer les maquettes Adobe XD en modules Angular, configurer Azure Logic Apps pour les workflows backend et gérer les bases de données SQL Azure. Travaillant principalement à distance, nous tenions des stand-ups quotidiens et des réunions clients hebdomadaires pour livrer des fonctionnalités de manière itérative.",
+        "challenges": [
+          "Acquérir une maîtrise pratique d'Angular et TypeScript pour créer des modules SPA responsifs basés sur les maquettes de designer.",
+          "Posséder le développement end-to-end en tant qu'alternant solo : configuration d'environnement, collaboration de code sur GitHub et apprentissage continu dans des conditions distantes.",
+          "Concevoir et implémenter des flux UI/UX sans formation design formelle, assurant un onboarding utilisateur rapide à travers des interfaces intuitives.",
+          "Orchestrer Azure Logic Apps et fonctions pour réaliser des intégrations backend sans code, gérant les déclencheurs HTTP et actions SQL de manière transparente.",
+          "Structurer les schémas SQL Azure et maintenir des bases de données de développement et production séparées pour supporter les tests et déploiements sécurisés."
+        ],
+        "stackIcons": [
+          "/img/svg/icons/logo_angular.svg",
+          "/img/svg/icons/logo_azure.svg",
+          "/img/svg/icons/logo_mysql.svg",
+          "/img/svg/icons/logo_git.svg"
+        ]
+      }
+    ]
+  },
+  "TechnicalToolBox": {
+    "heading": "Construire, Livrer, Maîtriser : Ma Boîte à Outils Technique",
+    "technicalData": [
+      {
+        "title": "Langages",
+        "items": ["Java", "JavaScript", "TypeScript", "SQL", "VBA"]
+      },
+      {
+        "title": "Frameworks & Bibliothèques",
+        "items": ["Spring Framework (Spring Boot)", "AngularJS", "Angular CLI", "ReactJS", "React Native", "Next.js", "Express.js"]
+      },
+      {
+        "title": "Bases de données",
+        "items": ["SQL Server", "PostgreSQL", "MongoDB", "SQL Azure"]
+      },
+      {
+        "title": "Outils & Environnements",
+        "items": ["Jira", "Confluence", "Figma", "Suite Adobe (notions)", "Notion", "Visual Studio Code", "Windows", "Linux", "Nodejs"]
+      },
+      {
+        "title": "Méthodologies & Soft Skills",
+        "items": ["Agile / Scrum (Scrum Master 1)", "Analyse & conception logicielle", "Résolution de problèmes complexes", "Autonomie", "Persévérance", "Polyvalence"]
+      }
+    ]
+  },
+  "Contacts": {
+    "heading": "Se Connecter, Collaborer, Créer : Construisons Ensemble !",
+    "resume": "Vous pouvez trouver mon CV ici !"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "biography": "Biographie",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "message": "Merci d'être passé ! Je suis ravi d'entendre parler de vos idées et d'explorer comment nous pouvons travailler ensemble.",
+    "copyright": "Développé par Diego Da Silva Marques",
+    "rights": "©2025 Tous droits réservés"
+  },
+  "Modal": {
+    "close": "Fermer",
+    "description": "Description :",
+    "context": "Contexte :",
+    "challenges": "Défis :",
+    "technicalStack": "Stacks techniques :"
+  }
+}

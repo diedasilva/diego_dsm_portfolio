@@ -4,13 +4,14 @@ import Image from "next/image";
 import { Project } from "@/types/Project";
 import "./ModalProjects.css";
 import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
 
 interface ModalProjectsProps {
   open: boolean;
   project: Project & {
     context?: string;
     challenges?: string[];
-    stackIcons?: string[]; // URLs or icon class names
+    stackIcons?: string[];
   };
   onClose: () => void;
 }
@@ -20,6 +21,7 @@ export default function ModalProjects({
   project,
   onClose,
 }: ModalProjectsProps) {
+  const t = useTranslations("Modal");
   const modalRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const closingRef = useRef(false);
@@ -31,7 +33,7 @@ export default function ModalProjects({
       gsap.set(modalRef.current, {
         y: 100,
         opacity: 0,
-        scale: 0.95,
+        scale: 0.80,
         filter: "blur(10px)",
       });
       gsap.to(overlayRef.current, {
@@ -67,15 +69,13 @@ export default function ModalProjects({
     if (modalRef.current && overlayRef.current) {
       gsap.to(overlayRef.current, {
         opacity: 0,
-        duration: 0.3,
+        duration: 0.1,
         ease: "power2.in",
       });
       gsap.to(modalRef.current, {
         y: 100,
         opacity: 0,
-        scale: 0.95,
-        filter: "blur(10px)",
-        duration: 0.3,
+        duration: 0.1,
         ease: "power3.in",
         onComplete: () => {
           onClose();
@@ -114,7 +114,7 @@ export default function ModalProjects({
         <button
           className="modal-close"
           onClick={handleClose}
-          aria-label="Fermer"
+          aria-label={t("close")}
         >
           ×
         </button>
@@ -130,19 +130,19 @@ export default function ModalProjects({
           <p>{project.date}</p>
         </div>
         <div className="modal-description">
-          <div className="modal-title subheading">Description : </div>
+          <div className="modal-title subheading">{t("description")}</div>
           {project.description}
         </div>
         {project.context && (
           <div className="modal-context">
-            <div className="modal-title subheading">Context : </div>
+            <div className="modal-title subheading">{t("context")}</div>
             {project.context}
           </div>
         )}
         {project.challenges && project.challenges.length > 0 && (
           <div className="modal-challenges">
             <div className="modal-title subheading">
-              Challenges :
+              {t("challenges")}
             </div>
             <ul>
               {project.challenges.map((challenge, idx) => (
@@ -153,7 +153,7 @@ export default function ModalProjects({
         )}
         <div className="modal-stack">
           <div className="modal-stack-icons">
-            <div className="modal-title subheading">Stacks techniques :</div>
+            <div className="modal-title subheading">{t("technicalStack")}</div>
             {project.stackIcons && project.stackIcons.length > 0 ? (
               project.stackIcons.map((icon, i) => {
                 const iconFile = icon.split("/").pop() || "";

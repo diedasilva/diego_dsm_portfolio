@@ -3,16 +3,14 @@
 import React, { useEffect, useRef } from "react";
 import "./Projects.css";
 import Image from "next/image";
-import projectsData from "@/../public/data/projects.json";
 import { Project } from "@/types/Project";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FadeContent from "../../animate/FadeContent/FadeContent";
 import ModalProjects from "../../animate/ModalProjects/ModalProjects";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const projects = projectsData as Project[];
 
 let modalOpen = false;
 let selectedProject: Project | null = null;
@@ -30,6 +28,8 @@ function closeModal() {
 }
 
 export default function Projects() {
+  const t = useTranslations("Projects");
+  const projects = t.raw("ProjectsData") as Project[];
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const arrowRef = useRef<SVGGElement>(null);
@@ -176,7 +176,7 @@ export default function Projects() {
         initialOpacity={0}
       >
         <div className="subheading title-projects">
-          Learning, Creating, Delivering: My Work in Action
+          {t("title")}
         </div>
       </FadeContent>
 
@@ -200,7 +200,7 @@ export default function Projects() {
                 className="project-link"
                 onClick={() => openModal(project)}
               >
-                En savoir plus
+                {t("learnMore")}
               </button>
             </div>
             <div
